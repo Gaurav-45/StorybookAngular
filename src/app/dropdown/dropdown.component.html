@@ -1,0 +1,13 @@
+<select
+  [ngClass]="classes"
+  [disabled]="disabled"
+  [ngModel]="defaultValue"
+  (ngModelChange)="onValueChange($event)"
+>
+  <option *ngIf="!defaultValue" disabled value="">
+    {{ placeholder }}
+  </option>
+  <option *ngFor="let option of options" [value]="option">
+    {{ option }}
+  </option>
+</select>

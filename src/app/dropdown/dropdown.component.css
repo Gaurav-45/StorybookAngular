@@ -1,0 +1,22 @@
+.storybook-dropdown {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+  font-size: 14px;
+}
+
+.storybook-dropdown--small {
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+.storybook-dropdown--medium {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.storybook-dropdown--large {
+  font-size: 16px;
+  padding: 10px 14px;
+}
