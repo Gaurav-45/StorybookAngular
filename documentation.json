@@ -485,6 +485,258 @@
             "extends": []
         },
         {
+            "name": "IconComponent",
+            "id": "component-IconComponent-8479e4107f1822937de0a01236b8d794321697cf6d57a609b81a00ac3b0ca3163ef817f4cedbf82573d2ad63a0980d8d83f29e7f155796db5135f21c922cffca",
+            "file": "src/app/icon/icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-icon",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./icon.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "type",
+                    "defaultValue": "'success'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "\"success\" | \"error\" | \"warning\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-icon',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './icon.component.html',\r\n  styleUrl: './icon.component.css'\r\n})\r\nexport class IconComponent {\r\n  @Input() type: 'success' | 'error' | 'warning' = 'success';\r\n\r\n  get icon(): string {\r\n    switch (this.type) {\r\n      case 'success': return '✔️';\r\n      case 'error': return '❌';\r\n      case 'warning': return '⚠️';\r\n      default: return '';\r\n    }\r\n  }\r\n\r\n  get classes(): string[] {\r\n    return ['storybook-icon', `storybook-icon--${this.type}`];\r\n  }\r\n}\r\n",
+            "styleUrl": "./icon.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "icon": {
+                    "name": "icon",
+                    "getSignature": {
+                        "name": "icon",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 14
+                    }
+                },
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 23
+                    }
+                }
+            },
+            "templateData": "<div [ngClass]=\"classes\">\r\n    <span class=\"storybook-icon__emoji\">{{ icon }}</span>\r\n  </div>\r\n  "
+        },
+        {
+            "name": "ModalComponent",
+            "id": "component-ModalComponent-bf316731b89f862c29532fab7b62356a10ff6efebf386bcff2fddb247455c63e00ad46092446b229965e1f19cd5bd430ab3efc5f33d3fa95168b16fa0cb7f9f1",
+            "file": "src/app/modal/modal.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-modal",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./modal.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "cancelLabel",
+                    "defaultValue": "'Cancel'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nCancel button label",
+                    "description": "<p>Cancel button label</p>\n",
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "confirmLabel",
+                    "defaultValue": "'OK'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nConfirm button label",
+                    "description": "<p>Confirm button label</p>\n",
+                    "line": 27,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "message",
+                    "defaultValue": "'This is a modal message.'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nDescription or message inside the modal",
+                    "description": "<p>Description or message inside the modal</p>\n",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "show",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow or hide modal",
+                    "description": "<p>Show or hide modal</p>\n",
+                    "line": 24,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'Modal Title'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nTitle of the modal",
+                    "description": "<p>Title of the modal</p>\n",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'success'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nType of modal: success, error, warning",
+                    "description": "<p>Type of modal: success, error, warning</p>\n",
+                    "line": 21,
+                    "type": "\"success\" | \"error\" | \"warning\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCancel",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nCallback function executed when cancel is clicked",
+                    "description": "<p>Callback function executed when cancel is clicked</p>\n",
+                    "line": 36,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onConfirm",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nCallback function executed when confirm is clicked",
+                    "description": "<p>Callback function executed when confirm is clicked</p>\n",
+                    "line": 33,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "getButtonColor",
+                    "args": [
+                        {
+                            "name": "type",
+                            "type": "\"success\" | \"error\" | \"warning\"",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "type",
+                            "type": "\"success\" | \"error\" | \"warning\"",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "IconComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { ButtonComponent } from '../button/button.component';\r\nimport { IconComponent } from '../icon/icon.component';\r\n\r\n@Component({\r\n  selector: 'app-modal',\r\n  standalone: true,\r\n  imports: [CommonModule, ButtonComponent, IconComponent],\r\n  templateUrl: './modal.component.html',\r\n  styleUrl: './modal.component.css',\r\n})\r\nexport class ModalComponent {\r\n  /** Title of the modal */\r\n  @Input() title: string = 'Modal Title';\r\n\r\n  /** Description or message inside the modal */\r\n  @Input() message: string = 'This is a modal message.';\r\n\r\n  /** Type of modal: success, error, warning */\r\n  @Input() type: 'success' | 'error' | 'warning' = 'success';\r\n\r\n  /** Show or hide modal */\r\n  @Input() show: boolean = false;\r\n\r\n  /** Confirm button label */\r\n  @Input() confirmLabel: string = 'OK';\r\n\r\n  /** Cancel button label */\r\n  @Input() cancelLabel: string = 'Cancel';\r\n\r\n  /** Callback function executed when confirm is clicked */\r\n  @Output() onConfirm = new EventEmitter<void>();\r\n\r\n  /** Callback function executed when cancel is clicked */\r\n  @Output() onCancel = new EventEmitter<void>();\r\n\r\n  get classes(): string[] {\r\n    return ['storybook-modal', `storybook-modal--${this.type}`];\r\n  }\r\n\r\n  getButtonColor(type: 'success' | 'error' | 'warning'): string {\r\n    switch (type) {\r\n      case 'success':\r\n        return '#4caf50';\r\n      case 'error':\r\n        return '#f44336';\r\n      case 'warning':\r\n        return '#ff9800';\r\n      default:\r\n        return '#555ab9';\r\n    }\r\n  }\r\n}\r\n",
+            "styleUrl": "./modal.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 38
+                    }
+                }
+            },
+            "templateData": "<!-- <div class=\"storybook-modal-backdrop\" *ngIf=\"show\">\r\n    <div [ngClass]=\"classes\" class=\"storybook-modal-box\">\r\n      <h3 class=\"storybook-modal-title\">{{ title }}</h3>\r\n      <p class=\"storybook-modal-message\">{{ message }}</p>\r\n      <div class=\"storybook-modal-actions\">\r\n        <storybook-button\r\n          [label]=\"cancelLabel\"\r\n          (onClick)=\"onCancel.emit()\"\r\n          [primary]=\"false\"\r\n        />\r\n        <storybook-button\r\n          [label]=\"confirmLabel\"\r\n          (onClick)=\"onConfirm.emit()\"\r\n          [primary]=\"true\"\r\n        />\r\n      </div>\r\n    </div>\r\n  </div>\r\n   -->\r\n\r\n<div class=\"storybook-modal-backdrop\" *ngIf=\"show\">\r\n  <div [ngClass]=\"classes\" class=\"storybook-modal-box\">\r\n    <div class=\"storybook-modal-header\">\r\n      <app-icon [type]=\"type\" />\r\n      <h3 class=\"storybook-modal-title\">{{ title }}</h3>\r\n    </div>\r\n    <p class=\"storybook-modal-message\">{{ message }}</p>\r\n    <div class=\"storybook-modal-actions\">\r\n      <storybook-button\r\n        [label]=\"cancelLabel\"\r\n        (onClick)=\"onCancel.emit()\"\r\n      ></storybook-button>\r\n      <storybook-button\r\n        [label]=\"confirmLabel\"\r\n        [primary]=\"true\"\r\n        [backgroundColor]=\"getButtonColor(type)\"\r\n        (onClick)=\"onConfirm.emit()\"\r\n      ></storybook-button>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
             "name": "PageComponent",
             "id": "component-PageComponent-922ca9c626a338c098ea5d1bc4f2daa769f0a525df4bb6f7c14cf3fa99ca642674e889823f79190fb796e00442e1f65f3ac5a6cdaca5ec124db20ac2da5a002e",
             "file": "src/app/page/page.component.ts",
@@ -616,8 +868,8 @@
     },
     "routes": [],
     "coverage": {
-        "count": 22,
-        "status": "low",
+        "count": 26,
+        "status": "medium",
         "files": [
             {
                 "filePath": "src/app/app.component.ts",
@@ -664,6 +916,24 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
                 "status": "low"
+            },
+            {
+                "filePath": "src/app/icon/icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modal/modal.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ModalComponent",
+                "coveragePercent": 80,
+                "coverageCount": "8/10",
+                "status": "very-good"
             },
             {
                 "filePath": "src/app/page/page.component.ts",

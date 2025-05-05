@@ -1,0 +1,41 @@
+<!-- <div class="storybook-modal-backdrop" *ngIf="show">
+    <div [ngClass]="classes" class="storybook-modal-box">
+      <h3 class="storybook-modal-title">{{ title }}</h3>
+      <p class="storybook-modal-message">{{ message }}</p>
+      <div class="storybook-modal-actions">
+        <storybook-button
+          [label]="cancelLabel"
+          (onClick)="onCancel.emit()"
+          [primary]="false"
+        />
+        <storybook-button
+          [label]="confirmLabel"
+          (onClick)="onConfirm.emit()"
+          [primary]="true"
+        />
+      </div>
+    </div>
+  </div>
+   -->
+
+<div class="storybook-modal-backdrop" *ngIf="show">
+  <div [ngClass]="classes" class="storybook-modal-box">
+    <div class="storybook-modal-header">
+      <app-icon [type]="type" />
+      <h3 class="storybook-modal-title">{{ title }}</h3>
+    </div>
+    <p class="storybook-modal-message">{{ message }}</p>
+    <div class="storybook-modal-actions">
+      <storybook-button
+        [label]="cancelLabel"
+        (onClick)="onCancel.emit()"
+      ></storybook-button>
+      <storybook-button
+        [label]="confirmLabel"
+        [primary]="true"
+        [backgroundColor]="getButtonColor(type)"
+        (onClick)="onConfirm.emit()"
+      ></storybook-button>
+    </div>
+  </div>
+</div>

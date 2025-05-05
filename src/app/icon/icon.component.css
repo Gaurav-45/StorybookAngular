@@ -1,0 +1,32 @@
+.storybook-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.storybook-icon--success {
+  background-color: #e6f4ea;
+  color: #34a853;
+  border: 2px solid #34a853;
+}
+
+.storybook-icon--error {
+  background-color: #fce8e6;
+  color: #ea4335;
+  border: 2px solid #ea4335;
+}
+
+.storybook-icon--warning {
+  background-color: #fef7e0;
+  color: #fbbc04;
+  border: 2px solid #fbbc04;
+}
+
+.storybook-icon__emoji {
+  line-height: 1;
+}
