@@ -9,11 +9,12 @@
       <storybook-button
         [label]="cancelLabel"
         (onClick)="onCancel.emit()"
+        [backgroundColor]="cancelButtonColor"
       ></storybook-button>
       <storybook-button
         [label]="confirmLabel"
         [primary]="true"
-        [backgroundColor]="getButtonColor(type)"
+        [backgroundColor]="confirmButtonColor || getButtonColor(type)"
         (onClick)="onConfirm.emit()"
       ></storybook-button>
     </div>

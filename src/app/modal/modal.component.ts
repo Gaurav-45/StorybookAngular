@@ -29,6 +29,12 @@ export class ModalComponent {
   /** Cancel button label */
   @Input() cancelLabel: string = 'Cancel';
 
+  /** Optional background color for confirm button */
+  @Input() confirmButtonColor?: string;
+
+  /** Optional background color for cancel button */
+  @Input() cancelButtonColor?: string;
+
   /** Callback function executed when confirm is clicked */
   @Output() onConfirm = new EventEmitter<void>();
 

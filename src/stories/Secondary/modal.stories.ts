@@ -1,6 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import { componentWrapperDecorator, moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 import { fn } from '@storybook/test';
 import { ModalComponent } from '../../app/modal/modal.component';
+import { IconComponent } from '../../app/icon/icon.component';
+import { CommonModule } from '@angular/common';
+
+import * as ButtonStories from '../Components/button.stories';
+import { ButtonComponent } from '../../app/button/button.component';
 
 const meta: Meta<ModalComponent> = {
   title: 'Components/Secondary/Modal',
@@ -11,6 +16,15 @@ const meta: Meta<ModalComponent> = {
     onConfirm: fn(),
     onCancel: fn(),
   },
+  decorators: [
+    moduleMetadata({
+      declarations: [],
+      imports: [CommonModule, ButtonComponent],
+    }),
+    componentWrapperDecorator(
+      (story) => `<div style="margin: 15em">${story}</div>`
+    ),
+  ],
 };
 export default meta;
 type Story = StoryObj<ModalComponent>;
@@ -21,8 +35,10 @@ export const Success: Story = {
     title: 'Success',
     message: 'Your operation was successful.',
     type: 'success',
-    confirmLabel: 'Great!',
-    cancelLabel: 'Dismiss',
+    confirmLabel: ButtonStories.Primary.args?.label || 'Great!',
+    cancelLabel: ButtonStories.Secondary.args?.label || 'Dismiss',
+    confirmButtonColor: ButtonStories.Primary.args?.backgroundColor,
+    cancelButtonColor: ButtonStories.Secondary.args?.backgroundColor,
     onConfirm: fn(() => alert('Confirmed!')),
     onCancel: fn(() => alert('Cancelled!')),
   },
