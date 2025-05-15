@@ -62,3 +62,35 @@ export const Warning: Story = {
     cancelLabel: 'Cancel',
   },
 };
+
+export const mobileView: Story = {
+  args: {
+    show: true,
+    title: 'Mobile View',
+    message: 'This is a mobile view of the modal.',
+    type: 'success',
+    confirmLabel: 'Great!',
+    cancelLabel:'Dismiss',
+  },
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphone14pro',
+    },
+  },
+};
+
+export const tabletView: Story = {
+  args: {
+    show: true,
+    title: 'Tablet View',
+    message: 'This is a tablet view of the modal.',
+    type: 'success',
+    confirmLabel: 'Great!',
+    cancelLabel:'Dismiss',
+  },
+  parameters: {
+    viewport: {
+      defaultViewport: 'ipad',
+    },
+  },
+};

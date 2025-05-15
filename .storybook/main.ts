@@ -16,7 +16,7 @@ const config: StorybookConfig = {
     "options": {}
   },
   "docs": {
-    autodocs: true, // 👈 this enables automatic Docs tab
+    autodocs: true,
   },
 };
 export default config;
