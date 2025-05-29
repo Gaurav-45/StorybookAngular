@@ -1,28 +1,32 @@
-# Workflow name
 name: "Chromatic Publish"
 
-# Event for the workflow
-on: push
+on:
+  push:
+    branches:
+      - main # or your default branch
+  pull_request:
 
-# List of jobs
 jobs:
-  test:
-    # Operating System
+  chromatic:
     runs-on: ubuntu-latest
-    # Job steps
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
+          fetch-depth: 0 # Needed for Chromatic to compare changes
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "yarn"
-      - run: yarn
-      #👇 Adds Chromatic as a step in the workflow
-      - uses: chromaui/action@latest
-        # Options required for Chromatic's GitHub Action
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci # Faster & safer than npm install in CI
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
         with:
-          #👇 Chromatic projectToken,
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
